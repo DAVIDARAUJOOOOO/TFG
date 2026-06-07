@@ -18,7 +18,7 @@ from src.visualization.language_plot import (
 
 from src.preprocessing.feature_engineering import build_features, run_correlation_analysis
 from src.training.training_1.training_1_piepline import run_training1   
-from src.training.training_mlp.pipeline_mlp import run_pipeline_mlp
+from src.training.training_mlp.pipeline_mlp import run_training_mlp
 from src.training.training_2.training_2_pipeline import run_training2
 from src.preprocessing.feature_engineering import expand_embeddings
 from src.visualization.plot_balance_chunks import plot_balance_chunks
@@ -88,7 +88,7 @@ def main():
     run_training1(df)
 
     #####MLP PIPELINE#####
-    run_pipeline_mlp(df)
+    run_training_mlp(df)
 
     #####SECOND TRAINING PIPELINE#####
     run_training2(df)

@@ -12,7 +12,7 @@ from src.visualization.language_plot import (
 from src.utils.json_io import load_json
 from src.preprocessing.feature_engineering import build_features, run_correlation_analysis
 from src.training.training_1.training_1_piepline import run_training1
-from src.training.training_mlp.pipeline_mlp import run_pipeline_mlp
+from src.training.training_mlp.pipeline_mlp import run_training_mlp
 from src.training.training_2.training_2_pipeline import run_training2
 from src.training.training_2b.training_2b_pipeline import run_training2b
 from src.training.training_3.training_3_pipeline import run_training3
@@ -47,7 +47,7 @@ def main():
     run_training1(df)
 
     #####MLP PIPELINE#####
-    run_pipeline_mlp(df)
+    run_training_mlp(df)
 
     #####SECOND TRAINING PIPELINE#####
     run_training2(df)
