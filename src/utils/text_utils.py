@@ -1,11 +1,14 @@
-from configs import paths as cfg
+import re
+import unicodedata
 
-# small wrapper to expose configured paths
-RAW_AUDIO_DIR = cfg.RAW_AUDIO_DIR
-PROCESSED_AUDIO_DIR = cfg.PROCESSED_AUDIO_DIR
-STORAGE_TRANSCRIPTS = cfg.STORAGE_TRANSCRIPTS
-STORAGE_EMBEDDINGS = cfg.STORAGE_EMBEDDINGS
-STORAGE_CHUNKS = cfg.STORAGE_CHUNKS
-MODELS_DIR = cfg.MODELS_DIR
-FIGURES_DIR = cfg.FIGURES_DIR
-OUTPUTS_DIR = cfg.OUTPUTS_DIR
+
+def neteja_text(text):
+    text = text.lower()
+    text = unicodedata.normalize('NFD', text)
+    text = ''.join(c for c in text if unicodedata.category(c) != 'Mn')
+
+    text = text.replace(" ", "_")
+
+    text = re.sub(r'[^a-z0-9_]', '', text)
+
+    return text
