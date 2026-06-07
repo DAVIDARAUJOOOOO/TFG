@@ -5,7 +5,7 @@ from src.visualization.class_balance_plot import plot_class_balance
 from src.training.trainer import Training
 from src.training.models import get_models, get_scoring
 from src.training.pipelines.approach_1 import get_pipeline_approach1
-from src.training.params_grid import get_params_grid
+from src.training.params_grid import get_param_grids
 from sklearn.model_selection import RepeatedStratifiedKFold
 
 
@@ -40,7 +40,7 @@ def run_training1(df):
     dict_models = get_models()
     model = dict_models["rf"]
     scoring = get_scoring()
-    params_grid=get_params_grid()
+    params_grid=get_param_grids()
     cv= RepeatedStratifiedKFold(n_splits=5, n_repeats=3, random_state=42)
     pipeline= get_pipeline_approach1(model, categorical_index, columns_to_normalize_not_emb)
     training= Training(X_train, y_train, X_test, y_test)

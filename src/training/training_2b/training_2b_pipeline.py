@@ -1,8 +1,8 @@
 from src.training.split import split
 from src.training.trainer import Training
 from src.training.models import get_models, get_scoring
-from src.training.pipelines.approach_2 import get_pipeline_approach2
-from src.training.params_grid import get_params_grid
+from src.training.pipelines.approach_2b import get_pipeline_approach2b
+from src.training.params_grid import get_param_grids
 from sklearn.model_selection import RepeatedStratifiedKFold, StratifiedGroupKFold
 
 from training.pipelines.approach_2b import get_pipeline_approach2b
@@ -30,7 +30,7 @@ def run_training2b(df):
     dict_models = get_models()
     model = dict_models["rf"]
     scoring = get_scoring()
-    params_grid=get_params_grid()
+    params_grid=get_param_grids()
     cv_groups = StratifiedGroupKFold(n_splits=5, shuffle=True, random_state=42)
     pipeline= get_pipeline_approach2b(model)
     training= Training(X_train_emb, y_train_emb, X_test_emb, y_test_emb, groups_train)

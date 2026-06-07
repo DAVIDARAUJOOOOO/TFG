@@ -1,8 +1,8 @@
 from src.training.split import split
 from src.training.trainer import Training
 from src.training.models import get_models, get_scoring
-from src.training.pipelines.approach_2 import get_pipeline_approach2
-from src.training.params_grid import get_params_grid
+from src.training.pipelines.approach_3 import get_pipeline_approach3
+from src.training.params_grid import get_param_grids
 from sklearn.model_selection import RepeatedStratifiedKFold
 from training.pipelines.approach_3 import get_pipeline_approach3
 
@@ -27,7 +27,7 @@ def run_training3(df):
     dict_models = get_models()
     model = dict_models["rf"]
     scoring = get_scoring()
-    params_grid=get_params_grid()
+    params_grid=get_param_grids()
     cv= RepeatedStratifiedKFold(n_splits=5, n_repeats=3, random_state=42)
     pipeline= get_pipeline_approach3(model, categorical_index, pca_cols, scale_cols)
     training= Training(X_train3, y_train3, X_test3, y_test3)
