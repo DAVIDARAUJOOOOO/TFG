@@ -4,8 +4,6 @@ from src.training.models import get_models, get_scoring
 from src.training.pipelines.approach_3 import get_pipeline_approach3
 from src.training.params_grid import get_param_grids
 from sklearn.model_selection import RepeatedStratifiedKFold
-from training.pipelines.approach_3 import get_pipeline_approach3
-
 
 def run_training3(df):
 

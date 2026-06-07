@@ -3,11 +3,10 @@ from src.training.trainer import Training
 from src.training.models import get_models, get_scoring
 from src.training.pipelines.approach_2b import get_pipeline_approach2b
 from src.training.params_grid import get_param_grids
-from sklearn.model_selection import RepeatedStratifiedKFold, StratifiedGroupKFold
+from src.training.training_2b.avaluacio_nen import evaluate_by_audio
+from src.training.training_2b.plotting import plot_audio_results
+from sklearn.model_selection import StratifiedGroupKFold
 
-from training.pipelines.approach_2b import get_pipeline_approach2b
-from training.training_2b.avaluacio_nen import evaluate_by_audio
-from training.training_2b.plotting import plot_audio_results
 
 
 def run_training2b(df):
