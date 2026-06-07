@@ -1,0 +1,27 @@
+# Core data / audio
+librosa
+numpy
+pandas
+soundfile
+
+# Visualization
+matplotlib
+seaborn
+
+# ML / training
+scikit-learn
+imbalanced-learn
+xgboost
+lightgbm
+joblib
+
+# Audio / speech utilities
+openai-whisper
+Levenshtein
+jiwer
+noisereduce
+
+# Deep learning (used by the MLP pipeline)
+torch
+tensorflow
+
