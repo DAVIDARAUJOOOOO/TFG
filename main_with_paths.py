@@ -36,9 +36,12 @@ def main():
     plot_distribution_dislexia(df_plot)
 
     results=load_json(cfg_paths.storage_path_2)
+    features=["arxiu","confianca_mitjana",
+          "confianca_std","ritme_std","silencis",
+          "cer","wer","velocitat","ratio","curs","lm","embeddings","dislexia"]
 
     df=pd.DataFrame(results)
-    df.head(30)
+    df=df[features]
     
     df = build_features(df)
     run_correlation_analysis(df)

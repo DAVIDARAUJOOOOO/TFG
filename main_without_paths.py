@@ -78,8 +78,12 @@ def main():
         storage_path_2=args.storage_emb,
         run_pca=True
     )
+    features=["arxiu","confianca_mitjana",
+          "confianca_std","ritme_std","silencis",
+          "cer","wer","velocitat","ratio","curs","lm","embeddings","dislexia"]
+
     df=pd.DataFrame(results)
-    df.head(30)
+    df=df[features]
 
     df = build_features(df)
     run_correlation_analysis(df)

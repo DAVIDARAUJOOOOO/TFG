@@ -10,7 +10,7 @@ from sklearn.model_selection import RepeatedStratifiedKFold
 
 
 def run_training1(df):
-    columns_no_train = ["arxiu", "dislexia"] + [
+    columns_no_train = ["arxiu", "dislexia", "stratification"] + [
         col for col in df.columns if "emb_" in col
     ]
 
